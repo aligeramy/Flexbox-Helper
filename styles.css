@@ -1,0 +1,242 @@
+/* styles.css */
+:root {
+    --background-color: #111;
+    --flex-container-bg: #101010;
+    --button-bg: transparent;
+    --button-hover-bg: #333;
+    --highlight-color: #999;
+    --text-color: #fff;
+    --code-text-color: #94eebc;
+    --code-color: #e98577;
+    --focus-color: #346ded;
+    --border-color: rgba(255, 255, 255, 0.06);
+    --gold-color: #FFD700;
+    --box-bg-color: #00A8E8;
+    --copied-bg-color: rgba(255,255,255,0.03);
+    --border-radius: 3px;
+    --button-padding: 10px;
+    --button-size: 30px;
+    --icon-size: 12px;
+    --box-size: 100px;
+    --container-padding: 20px;
+    --transition-duration: 0.3s;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, 'Courier New', monospace;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+button {
+    transition: all ease-in-out 300ms;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    gap: 10px;
+}
+
+.controls, .flex-container, .output {
+    flex: 1;
+    border-radius: var(--border-radius);
+}
+
+.controls {
+    min-width: 300px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 6px;
+    padding: 20px;
+}
+
+.controls p {
+    margin: 0;
+    padding: 5px 0;
+    color: var(--highlight-color);
+    font-size: 12px;
+}
+
+.control-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+
+}
+.control-group:nth-of-type(1) {
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+
+}
+
+.control-group.nb {
+    border-bottom: none;
+    padding-bottom: 0px; 
+}
+.control-label {
+    font-size: 14px;
+    color: var(--gold-color);
+    width: 80px;
+}
+.control-label.longer {
+    width: inherit;
+    margin-right: 20px;
+}
+
+.icon-button {
+    background-color: var(--button-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--button-padding);
+    cursor: pointer;
+    width: var(--button-size);
+    height: var(--button-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+}
+
+.icon-button img.icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    aspect-ratio: 1 / 1;
+}
+
+.icon-button:hover, .icon-button:focus {
+    background-color: rgba(255,255,255,0.06)
+}
+
+.icon-button:focus {
+    box-shadow: 0 0 5px 2px rgb(85, 139, 2480,0.3);
+}
+
+.icon-button.copy {
+    width: 200px;
+    aspect-ratio: inherit;
+    font-size: 11px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px;
+}
+
+.flex-container {
+    flex: 2;
+    display: flex;
+    padding: var(--container-padding);
+    background-color: var(--flex-container-bg);
+    min-height: 300px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    min-width: 500px;
+    overflow: hidden;
+   
+
+
+}
+
+.box {
+    min-width: var(--box-size);
+    min-height: var(--box-size);
+    border:1px solid var(--box-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--box-bg-color);
+    border-radius: var(--border-radius);
+
+}
+
+.box:nth-of-type(1){
+    border:1px solid #00e8d5;
+    color: #00e8d5;
+
+}
+
+.box:nth-of-type(2){
+    border:1px solid #00a6ff;
+    color: #00a6ff;
+
+}
+
+.box:nth-of-type(3){
+    border:1px solid #0055ff;
+    color: #0055ff;
+
+
+}
+
+.output {
+    background-color: var(--button-bg);
+    border: 1px solid var(--border-color);
+    padding: var(--container-padding);
+    white-space: pre-line;
+    overflow-x: auto;
+    transition: background-color var(--transition-duration);
+    color: var(--code-text-color);
+    min-width: 250px;
+    max-width: 300px;
+}
+
+.code-value {
+    color: var(--code-color);
+}
+
+#copyButton {
+    margin-top: -5px;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: var(--button-bg);
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    width: auto;
+}
+#copyButton img {
+    margin-right: 5px;
+
+}
+
+#copyButton:hover {
+    background-color: var(--button-hover-bg);
+}
+
+.copied {
+    background-color: var(--copied-bg-color) !important;
+}
+
+#gapInput {
+    width: 30px;
+    height: 20px;
+    margin-right: 5px;
+    border: 1px solid var(--border-color);
+    background: none;
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+}
+
+.main {
+    width: 80px;
+    color: var(--text-color);
+    font-size: 11px;
+}
+
+.selected {
+    border: 1px solid var(--focus-color);
+}

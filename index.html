@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Playground</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="controls">
+            <div class="section-group">
+                <div class="control-group">
+                    <p class="control-label">Direction</p>
+                    <button onclick="setFlexDirection('row')" class="icon-button main selected">
+                        <!-- <img src="icons/horizontal/icon.png" class="icon" alt="row"> -->
+                        Horizontal
+                    </button>
+                    <button onclick="setFlexDirection('column')" class="icon-button main">
+                        <!-- <img src="icons/vertical/icon.png" class="icon" alt="column"> -->
+                        Vertical
+                    </button>
+                    <button onclick="toggleFlexDirection()" class="icon-button" id="toggleDirection">
+                        <img src="icons/global/toggle.png" class="icon" alt="toggle">
+                    </button>
+                </div>
+               
+                <div class="control-group nb">
+                    <p class="control-label">Align</p>
+                    <button onclick="setAlignItems('flex-start')" class="icon-button" id="align-start">
+                        <img src="icons/horizontal/align-start.png" class="icon" alt="align-start">
+                    </button>
+                    <button onclick="setAlignItems('flex-end')" class="icon-button" id="align-end">
+                        <img src="icons/horizontal/align-end.png" class="icon" alt="align-end">
+                    </button>
+                    <button onclick="setAlignItems('center')" class="icon-button" id="align-center">
+                        <img src="icons/horizontal/align-center.png" class="icon" alt="align-center">
+                    </button>
+                    <button onclick="setAlignItems('baseline')" class="icon-button" id="align-baseline">
+                        <img src="icons/horizontal/align-baseline.png" class="icon" alt="align-baseline">
+                    </button>
+                    <button onclick="setAlignItems('stretch')" class="icon-button" id="align-stretch">
+                        <img src="icons/horizontal/align-stretch.png" class="icon" alt="align-stretch">
+                    </button>
+                </div>
+                <div class="control-group nb">
+                    <p class="control-label">Justify</p>
+                    <button onclick="setJustifyContent('flex-start')" class="icon-button" id="justify-start">
+                        <img src="icons/horizontal/justify-start.png" class="icon" alt="justify-start">
+                    </button>
+                    <button onclick="setJustifyContent('flex-end')" class="icon-button" id="justify-end">
+                        <img src="icons/horizontal/justify-end.png" class="icon" alt="justify-end">
+                    </button>
+                    <button onclick="setJustifyContent('center')" class="icon-button" id="justify-center">
+                        <img src="icons/horizontal/justify-center.png" class="icon" alt="justify-center">
+                    </button>
+                    <button onclick="setJustifyContent('space-between')" class="icon-button" id="justify-space-between">
+                        <img src="icons/horizontal/justify-space-between.png" class="icon"
+                            alt="justify-space-between">
+                    </button>
+                    <button onclick="setJustifyContent('space-around')" class="icon-button" id="justify-space-around">
+                        <img src="icons/horizontal/justify-space-around.png" class="icon"
+                            alt="justify-space-around">
+                    </button>
+                    <button onclick="setJustifyContent('space-evenly')" class="icon-button" id="justify-space-evenly">
+                        <img src="icons/horizontal/justify-space-evenly.png" class="icon"
+                            alt="justify-space-evenly">
+                    </button>
+                </div>
+                <div class="control-group nb">
+                    <p class="control-label">Wrap</p>
+                    <button onclick="toggleWrap()" class="icon-button" id="wrapButton">
+                        <img src="icons/global/wrap.png" class="icon" alt="wrap">
+                    </button>
+                </div>
+                <div class="control-group">
+                    <p class="control-label">Gap</p>
+                    <input type="number" id="gapInput" value="10" min="0" oninput="changeGap(this.value)" /> px
+                </div>
+               
+            </div>
+
+            <div class="section-group">
+                <div class="control-group">
+                    <p class="control-label longer">Add / Remove Box</p>
+
+                    <button onclick="addBox()" class="icon-button">
+                        <img src="icons/global/add.png" class="icon" alt="add">
+                    </button>
+                    <button onclick="removeBox()" class="icon-button">
+                        <img src="icons/global/remove.png" class="icon" alt="remove">
+                    </button>
+                </div>
+
+                <div class="control-group">
+                    <button id="copyButton" class="icon-button copy">
+                        <img src="icons/global/copy.png" class="icon" alt="copy"> Copy
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="flex-container" id="flexContainer">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+        </div>
+        <div class="output" id="cssOutput">
+            <code id="cssCode">/* CSS code will be displayed here */</code>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
